@@ -1,0 +1,7 @@
+{
+  "name": "financ-BNDES",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
