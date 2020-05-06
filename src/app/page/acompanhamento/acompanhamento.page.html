@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Acompanhamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-content padding>
+    <ion-searchbar (ionInput)="filterSolic($event)" [(ngModel)]="searchText"></ion-searchbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let solicitacao of solicitacoes">
+
+      <ion-button (click)="editSolicitacao(idsolicitacao)">
+        <h1>{{solicitacao.idSolicitacao}}</h1>
+        <h1>{{solicitacao.dsCNPJ}}</h1>
+        <h2>{{solicitacao.dsRazaoSocial}}</h2>
+        <h2>{{solicitacao.DtCadastro | date:'dd/MM/yyyy'}}</h2>
+        <h2>{{solicitacao.NuValorPretendido | currency:'BRL':true}}</h2>
+      </ion-button>
+
+      <ion-item-options side="left">
+        <ion-button color="danger" (click)="removeSolicitacao(solicitacao)">
+          <ion-icon name="trash"></ion-icon>
+          Excluir
+        </ion-button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="center" horizontal="start" slot="fixed">
+    <ion-button color="light" (click)="addSolicitacao()"><ion-icon name="add"></ion-icon></ion-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p>Total: </p>
+    <ion-list>
+      <ion-item no-lines>
+        <ion-label>Listar inativos</ion-label>
+        <ion-toggle name="listarSolicitacoes" [(ngModel)]="somenteminhassolicitacoes" (ionChange)="getAllSolicitaces()"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+</ion-footer>

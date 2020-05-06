@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contato</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <form [formGroup] = "fGroup">
+<div>
+
+    <ion-card>
+    <ion-card-header align="center"><strong>Contate-nos</strong></ion-card-header> 
+    <ion-item>
+      <ion-label position="floating">*Nome</ion-label>
+    <ion-input name="Sender" position="floating" formControlName="Sender"></ion-input>
+    
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">Empresa</ion-label>
+    <ion-input name="Company" position="floating" formControlName="Company"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">*Tel</ion-label>
+    <ion-input type="tel" name="FoneSender" position="floating" formControlName="FoneSender"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">*e-mail</ion-label>
+    <ion-input name="EmailSender" type="email" position="floating" formControlName="EmailSender"></ion-input>
+    </ion-item> 
+      <ion-item line="yes">
+      <ion-label >*Assunto :</ion-label>
+      <ion-select name="SubjectEmail" multiple="false" cancelText="Cancel" okText="OK" formControlName="SubjectEmail">
+        <ion-select-option value="JUR">Jurídico</ion-select-option>
+        <ion-select-option value="ORC">Consulta/Orçamento</ion-select-option>
+        <ion-select-option value="REC">Reclamação</ion-select-option>
+        <ion-select-option value="AJU">Ajuda</ion-select-option>
+        <ion-select-option value="OUT">Outros</ion-select-option>
+      </ion-select>
+    </ion-item>    
+    <ion-item>
+      <ion-label position="stacked">*Descreva aqui sua mensagem para nós</ion-label>
+      <ion-input type="text" [(ngModel)]="Contato.MessageEmail" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    <p align="center">
+      <ion-button  color="primary" size="medium" (click)="SubmitEmailContato()" [disabled]="!fGroup.valid">Enviar</ion-button></p>
+  </ion-card>
+  <ion-card>
+    <ion-text>
+      <p align="center"> Endereço: Al. Sibipiruna, Nro. 167, Cjto. 31 Bloco "J"</p>
+      <p align="center"> Vila Adalgisa , Osasco - SP</p>
+      <p align="center"> CEP 06030-302 </p>
+      <p align="center"> e-mail: contato@meet-it.com.br</p>
+      <p align="center"> Tel.: +55(11) 99115-3719</p>
+    </ion-text>
+   </ion-card> 
+  </div>
+</form>
+  </ion-content>

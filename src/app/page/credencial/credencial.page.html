@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Credencial (login)</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <form [formGroup] = "fGroup">
+  <div>
+    <ion-card>
+    <ion-card-header align="center"><strong>Criar uma Credencial (login)</strong></ion-card-header> 
+    <ion-item>
+      <ion-label position="floating">*Nome Completo</ion-label>
+    <ion-input name="CredencialNome" position="floating" formControlName="CredencialNome"></ion-input> 
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">*e-mail</ion-label>
+    <ion-input name="CredencialEmail" type="email" position="floating" formControlName="CredencialEmail"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">*Senha</ion-label>
+    <ion-input name="CredencialSenha" type="password" position="floating" formControlName="CredencialSenha"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">*Confirmação de Senha</ion-label>
+    <ion-input name="CredencialConfSenha" type="password" position="floating" formControlName="CredencialConfSenha"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">*Tel</ion-label>
+      <ion-input type="tel" [(ngModel)]="Credencial.CredencialFone" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item> 
+    <ion-item>
+       <p align="center">
+      <ion-button  color="primary" size="medium" (click)="SubmitCredencial()" [disabled]="!fGroup.valid">Enviar</ion-button></p>
+    </ion-item>
+    </ion-card>
+</div>
+</form>
+  </ion-content>
