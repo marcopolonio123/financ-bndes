@@ -114,7 +114,8 @@
          <ion-select-option value="TO">Tocantins</ion-select-option>
          </ion-select>
        </ion-item>   
-     </ion-card> 
+     </ion-card>
+
     </ion-card>
     
     <ion-card>
@@ -132,13 +133,17 @@
         <ion-input type="email" name="SolicSocioEmail" position="floating" formControlName="SolicSocioEmail"></ion-input>
       </ion-item> 
       <ion-item>
-        <ion-label position="floating">*Telefone</ion-label>
+        <ion-label position="floating">*Tel</ion-label>
         <ion-input type="tel" position="floating" name="SolicSocioFone" formControlName="SolicSocioFone"></ion-input>
       </ion-item>
     </ion-card>
    
     <ion-card>
-      <ion-card-header align="center"><strong>Dados Bancários</strong></ion-card-header> 
+      <ion-card-header align="center"><strong>Dados Bancários (PJ)</strong></ion-card-header> 
+      <ion-item>
+        <ion-label position="floating">*Banco</ion-label>
+        <ion-input type="text" name="SolicInstFinanc" position="floating" formControlName="SolicInstFinanc"></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label position="floating">*Numero Agência</ion-label>
         <ion-input type="text" name="SolicCodAgencia" position="floating" formControlName="SolicCodAgencia"></ion-input>
@@ -177,7 +182,8 @@
         <ion-checkbox checked="false" color="primary" slot="start" [(ngModel)]="Solic.SolicAcordoAdm" [ngModelOptions]="{standalone: true}"></ion-checkbox> 
         <ion-label>Estou de acordo</ion-label>
       </ion-item>
-      <p>&nbsp;&nbsp;- Estou ciente de que a "S S Consultoria e Assessoria Jurídica" cobrará uma taxa administrativa de 10(dez) por cento do valor do financiamento liberado pela Assessoria realizada nesta operação.</p>
+      <p>&nbsp;&nbsp;- Estou ciente de que a "S S Consultoria e Assessoria Jurídica" cobrará uma taxa administrativa de 10(dez) por cento do valor do financiamento liberado por esse processo,  
+        pela Consultoria/Assessoria realizada nesta operação.</p>
     </ion-card>
      
   <p align="center">

@@ -12,10 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { SolicitacaoService, SolicitacaoData } from './solicitacao.service';
 import { DatabaseService } from './database.service';
 import { CredencialService } from './credencial.service';
-import { FolderPage } from './folder/folder.page';
+
 
 @NgModule({
-  declarations: [AppComponent, FolderPage],
+  declarations: [AppComponent],
   entryComponents: [AppComponent],
   imports: [
     BrowserModule,
